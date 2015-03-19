@@ -1,0 +1,32 @@
+
+{
+  "name": "gulp-source-downloader",
+  "version": "0.1.0",
+  "description": "A plugin for Kodeks source",
+  "keywords": [
+    "gulpplugin"
+  ],
+  "author": {
+    "name": "Shapovalov Alexandr",
+    "email": "freezko@gmail.com",
+    "url": "https://github.com/Freezko"
+  },
+  "repository": "cntd/gulp-source-downloader",
+  "dependencies": {
+    "through2": "*",
+    "gulp-util": "~2.2.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "coveralls": "*",
+    "mocha-lcov-reporter": "*",
+    "istanbul": "*",
+    "event-stream": "*",
+    "should": "~2.1.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "license": "MIT"
+}
