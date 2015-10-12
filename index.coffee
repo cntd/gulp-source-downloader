@@ -13,7 +13,7 @@ path=null
 
 
 gulp.task 'source:clean', (callback)->
-	del ['./tmp/source'], callback
+	del ['./tmp/source','./tmp'], callback
 
 gulp.task 'source:clone', (callback)=>
 	git.exec {args : "clone --branch #{@tag} #{@repo_url} #{tmp_dir}", quiet: true}, (err)->
