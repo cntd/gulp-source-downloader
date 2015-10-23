@@ -10,11 +10,13 @@ tag=null
 projects=null
 path=null
 
+
+
 gulp.task 'source:clean', (callback)->
 	del ['./tmp/source'], callback
 
 gulp.task 'source:clone', (callback)=>
-	git.exec {args : "clone --branch #{@tag} http://composer:composer@phd.box.dmz/diffusion/SRC/source.git #{tmp_dir}", quiet: true}, (err)->
+	git.exec {args : "clone --branch #{@tag} #{@repo_url} #{tmp_dir}", quiet: true}, (err)->
 		if (err)
 			throw err
 		else
@@ -27,7 +29,9 @@ gulp.task 'source:copy', =>
 	return Q.done()
 
 module.exports = (options, callback) =>
-	{@tag, @projects, @path} = options
+	{@tag, @projects, @path, @repo_url} = options
+
+	@repo_url ?= 'http://gitlab.dmz/kodeks/source.git'
 
 	if !@tag
 		throw 'Не определена версия ( тэг)'
