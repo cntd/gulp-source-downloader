@@ -39,7 +39,7 @@ copy= (project)=>
 gulp.task 'source:copy', =>
 	Q = new streamqueue({ objectMode: true })
 	for project in @projects
-		Q.queue copy
+		Q.queue copy(project)
 	return Q.done()
 
 module.exports = (options, callback) =>
