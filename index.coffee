@@ -2,7 +2,6 @@ gulp 		= require 'gulp'
 run			= require 'run-sequence'
 git 		= require 'gulp-git'
 del			= require 'del'
-streamqueue = require 'streamqueue'
 plumber		= require 'gulp-plumber'
 
 tmp_dir = './tmp/source'
@@ -23,8 +22,8 @@ gulp.task 'source:clone', (callback)=>
 		else
 			callback()
 
-copy= (project)=>
-	return gulp.src("#{tmp_dir}/user/projects/#{project}/**/*", {"base" : "#{tmp_dir}/user/projects"})
+copy= (copy_this)=>
+	return gulp.src(copy_this, {"base" : "#{tmp_dir}/user/projects"})
 	.pipe plumber (error)->
 		notify.onError({
 			title: "Gulp"
@@ -37,10 +36,10 @@ copy= (project)=>
 	.pipe(gulp.dest(@path))
 
 gulp.task 'source:copy', =>
-	Q = new streamqueue({ objectMode: true })
+	copy_this = []
 	for project in @projects
-		Q.queue copy(project)
-	return Q.done()
+		copy_this.push "#{tmp_dir}/user/projects/#{project}/**/*"
+	return copy(copy_this)
 
 module.exports = (options, callback) =>
 	{@tag, @projects, @path, @repo_url} = options

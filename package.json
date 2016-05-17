@@ -1,6 +1,6 @@
 {
   "name": "gulp-source-downloader",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "A plugin for Kodeks source",
   "author": {
     "name": "Shapovalov Alexandr",
@@ -14,7 +14,6 @@
     "gulp": "^3.9.0",
     "gulp-git": "^1.2.4",
     "gulp-plumber": "^1.1.0",
-    "run-sequence": "^1.1.0",
-    "streamqueue": "^1.1.1"
+    "run-sequence": "^1.1.0"
   }
 }
