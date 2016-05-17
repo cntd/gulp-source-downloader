@@ -52,4 +52,4 @@ module.exports = (options, callback) =>
 	else if !@projects? && !@path?
 		throw 'Не определены проекты или path'
 	else
-		run 'source:clone', 'source:copy', 'source:clean', callback
+		run 'source:clean', 'source:clone', 'source:copy', 'source:clean', callback
