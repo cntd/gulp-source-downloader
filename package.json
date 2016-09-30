@@ -1,6 +1,6 @@
 {
   "name": "gulp-source-downloader",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A plugin for Kodeks source",
   "author": {
     "name": "Shapovalov Alexandr",
@@ -10,6 +10,7 @@
   "repository": "cntd/gulp-source-downloader",
   "license": "MIT",
   "dependencies": {
+    "coffee-script": "^1.11.0",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-git": "^1.2.4",
